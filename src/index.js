@@ -54,9 +54,9 @@ async function imagesService() {
     }
 
     gallery.innerHTML = '';
-    lightbox.refresh();
     gallery.insertAdjacentHTML('afterbegin', createMarkup(data));
     window.scrollTo(0, 0);
+    lightbox.refresh();
 
     loadMore.style.display = 'block';
     const totalPages = Math.ceil(data.totalHits / perPage);
