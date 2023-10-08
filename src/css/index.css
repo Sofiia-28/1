@@ -40,9 +40,6 @@
   .search-btn:hover {
     background-color: lightgray;
   }
-  .search-btn:focus {
-    background-color: lightgray;
-  }
 
   .search-icon {
     display: inline-block;
@@ -91,8 +88,5 @@
     cursor: pointer;
   }
   .load-more:hover {
-    background-color: #9d6c6c;
-  }
-  .load-more:focus {
     background-color: #9d6c6c;
   }

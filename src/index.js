@@ -40,14 +40,14 @@ async function imagesService() {
       page: page,
       per_page: perPage,
     });
-
     const { data } = await axios.get(`${URL}?${params}`);
+
     if (data.total === 0) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
     }
-    else {
+    if (page === 1) {
       Notiflix.Notify.success(
         `Hooray! We found ${data.total} images.`
       );
