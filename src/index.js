@@ -1,7 +1,9 @@
-import {imagesService, page} from './js/images-service'
+import {imagesService} from './images-service.js'
 
-const form = document.getElementById('search-form');
-const loadMore = document.querySelector('.load-more');
+export const form = document.getElementById('search-form');
+export const loadMore = document.querySelector('.load-more');
+export const gallery = document.querySelector('.gallery');
+export let page = 1;
 
 loadMore.style.display = 'none';
 
@@ -10,6 +12,8 @@ loadMore.addEventListener('click', onLoadMore);
 
 function getImages(event) {
   event.preventDefault();
+  gallery.innerHTML = '';
+  page = 1;
   imagesService();
 }
 

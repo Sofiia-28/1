@@ -2,12 +2,12 @@ import Notiflix from 'notiflix';
 import axios from 'axios';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import {form, loadMore, page, gallery} from './index.js'
 
-const gallery = document.querySelector('.gallery');
 const URL = 'https://pixabay.com/api/';
 const API_KEY = '39834161-b44ad9889b268d198aeea1a60';
 let lightbox = new SimpleLightbox(".gallery a");
-let page = 1;
+
 const perPage = 40;
 
 export async function imagesService() {
@@ -35,10 +35,9 @@ export async function imagesService() {
         );
       }
   
-    //   gallery.innerHTML = '';
-      gallery.insertAdjacentHTML('afterbegin', createMarkup(data));
+      gallery.insertAdjacentHTML('beforeend', createMarkup(data));
     //   window.scrollTo(0, 0);
-    //   lightbox.refresh();
+      lightbox.refresh();
   
       loadMore.style.display = 'block';
       const totalPages = Math.ceil(data.totalHits / perPage);
@@ -48,6 +47,7 @@ export async function imagesService() {
           "We're sorry, but you've reached the end of search results"
         );
       }
+      console.log(data);
       return data;
     } catch (err) {
       console.log('TRY-CATCH:', err);
