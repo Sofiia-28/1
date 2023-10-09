@@ -1,4 +1,4 @@
-import {imagesService, page} from './images-service'
+import {imagesService, page} from 'js/images-service'
 
 const form = document.getElementById('search-form');
 const loadMore = document.querySelector('.load-more');
