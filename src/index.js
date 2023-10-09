@@ -1,4 +1,4 @@
-import {imagesService} from './images-service.js'
+import { imagesService } from './images-service.js';
 
 export const form = document.getElementById('search-form');
 export const loadMore = document.querySelector('.load-more');
