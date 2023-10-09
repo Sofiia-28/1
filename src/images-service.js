@@ -44,7 +44,6 @@ export async function imagesService() {
         "We're sorry, but you've reached the end of search results"
       );
     }
-    console.log(data);
     return data;
   } catch (err) {
     console.log('TRY-CATCH:', err);
